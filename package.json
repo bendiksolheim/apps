@@ -1,0 +1,23 @@
+{
+  "name": "apps",
+  "version": "0.0.1",
+  "description": "Wrapper around Docker to handle micro services",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "cli-table3": "^0.6.0",
+    "commander": "^6.2.0",
+    "dockerode": "^3.2.1",
+    "js-levenshtein": "^1.1.6"
+  },
+  "scripts": {
+    "start": "node src/apps.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "bin": {
+    "apps": "src/apps.js"
+  }
+}

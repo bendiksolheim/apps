@@ -10,7 +10,7 @@ const program = new Command();
 program
   .version("0.0.1")
   .description("Handle micro services with ease.")
-  .command("status", "Lists all apps")
+  .command("status", "Lists all apps", { isDefault: true })
   .command("start <app>", "Launch apps in docker")
   .command("stop <app>", "Stop apps running in docker");
 

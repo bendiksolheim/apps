@@ -27,7 +27,7 @@ This is the config for all your apps.
 
 ```json
 {
-  "global" {
+  "global": {
     "env": {
       "MY_ENV": "value"
     }

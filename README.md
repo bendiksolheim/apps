@@ -16,8 +16,8 @@ Resides in either your home folder or `~/.config/apps`. Contains a path to the a
 
 ```json
 {
-  "config": "~/path/to/real/config",
-  "apps": "~/path/to/folder/with/apps"
+  "config": "~/path/to/real/config.json",
+  "home": "~/path/to/folder/with/apps/"
 }
 ```
 

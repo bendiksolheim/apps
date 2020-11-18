@@ -23,13 +23,26 @@ Create a file called either ${configs.join(" or ")} with the following content:
   }
 }
 
+let cachedConfig = null;
+
 // Assumes that a config exists. Fails otherwise.
-function getConfig() {
-  const config = configs.filter(exists)[0].replace("~", os.homedir());
-  return JSON.parse(fs.readFileSync(config, { encoding: "utf8" }));
+function config() {
+  if (cachedConfig == null) {
+    const configFile = configs.filter(exists)[0].replace("~", os.homedir());
+    const tempConfig = JSON.parse(
+      fs.readFileSync(configFile, { encoding: "utf8" })
+    );
+
+    cachedConfig = {
+      home: tempConfig.home.replace("~", os.homedir()),
+      config: tempConfig.config.replace("~", os.homedir()),
+    };
+  }
+
+  return cachedConfig;
 }
 
 module.exports = {
   verifyConfigExists,
-  getConfig,
+  config,
 };

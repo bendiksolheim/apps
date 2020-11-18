@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { config } = require("./global-config");
 const Docker = require("dockerode");
 
 const docker = new Docker();
@@ -30,7 +31,7 @@ const get = (app, all = false) =>
   );
 
 const create = (app) => {
-  const home = "/Users/bendiksolheim/bekk/kunder/vegvesen";
+  const home = config().home;
 
   const containerConfig = {
     Image: app.docker.image,

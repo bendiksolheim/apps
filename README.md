@@ -41,10 +41,12 @@ This is the config for all your apps.
         "name": "org-my-app",
         "ports": [8080],
         "image": "java:latest",
-        "cmd": "java -jar app.jar",
+        "cmd": "java -jar /home/app.jar",
         "path": "myapp/target"
       }
     }
   ]
 }
 ```
+
+The contents of `appConfig.docker.path` is mounted under `/home`. If you want access to files in your container, specify the folder containing them in `appConfig.docker.path`. Use `appConfig.docker.cmd` to perform actions at startup.
